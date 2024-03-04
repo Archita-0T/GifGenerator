@@ -1,3 +1,8 @@
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +10,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #0e162377;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 8px solid #0000;
+  border-right-color: #c2c2c997;
+  position: relative;
+  animation: s4 1s infinite linear;
+}
+.spinner:before,
+.spinner:after {
+  content: "";
+  position: absolute;
+  inset:-8px;
+  border-radius: 50%;
+  border:inherit;
+  animation:inherit;
+  animation-duration: 2s;
+}
+.spinner:after {
+  animation-duration: 4s;
+}
+
+@keyframes s4 {
+  100% {transform: rotate(1turn)}
 }
